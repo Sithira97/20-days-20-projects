@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    flex-direction: column;
+    background: linear-gradient(45deg, #9198e5, 50%, #e66465);
+}
+
+.letters {
+    perspective: 1000px;
+    font-family: cursive;
+    color: ghostwhite;
+    margin: 4rem 0;
+}
+
+.letters span {
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+    line-height: 1;
+    font-size: 5rem;
+
+}
+
+.letters.hover span.hovered {
+    animation: jumpNroll 2s ease-in-out;
+    transform-origin: bottom;
+}
+
+.letters.click span.active {
+    animation: justJump 1s ease-in-out;
+    transform-origin: bottom left;
+
+}
+
+@keyframes jumpNroll {
+    0% {
+        transform: translate(0, 0) rotate(180deg);
+    }
+
+    25% {
+        transform: scale(2) translate(0, -150px);
+    }
+
+    /* 50% {} */
+
+    75% {
+        transform: scale(1.1, 1.1) translate(0, 200px);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+@keyframes justJump {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: scale(2) translate(0, -100px);
+    }
+
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
